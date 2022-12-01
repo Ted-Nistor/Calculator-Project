@@ -1,11 +1,10 @@
-// const express = require("express");
+const express = require("express");
 
-// const tailwindConfig = require("./tailwind.config");
-// const app = express();
-// const port = 3000;
+const app = express();
+const port = process.env.PORT || 3000;
 
-// app.get("/", (req, res) => res.sendFile(__dirname + "/index.html"));
-// app.get("/", (req, res) => res.sendFile(__dirname + "/index.js"));
-// app.use(express.static("public"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
 
-// app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.use(express.static("public"));
+
+app.listen(port, () => console.log(`Server is running on port ${port}`));
